@@ -1,0 +1,33 @@
+
+.h1{
+    text-align: center;
+    font-family:"Product Sans";
+
+}
+
+
+
+body {
+    background-color: black;
+    }
+
+.logo{
+   
+    height:100px;
+    aspect-ratio: 16/9;
+
+}
+
+.bg1{
+    background-color: black;
+}
+
+.bg2{
+    background-color:black;
+    color:white
+}
+
+.cimage{
+    height: 250px;
+    aspect-ratio: 16/9;
+}
