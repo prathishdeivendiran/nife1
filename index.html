@@ -3,158 +3,415 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    
+    <title>TechGadget - Sanjay's E-Commerce Store</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Increase the font size of the label and center it */
-        .carousel-label {
-            font-size: 2rem; /* Adjust as needed */
-            font-weight: bold;
+        :root {
+            --primary: #3498db;
+            --secondary: #2c3e50;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+        .navbar {
+            background-color: var(--secondary) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--light) !important;
+        }
+        
+        .nav-link {
+            color: var(--light) !important;
+            font-weight: 500;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 50px;
+        }
+        
+        .product-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-bottom: 30px;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .product-img {
+            height: 200px;
+            object-fit: contain;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        
+        .price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .btn-custom {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            border-radius: 50px;
+            padding: 10px 25px;
+            border: none;
+        }
+        
+        .btn-custom:hover {
+            background-color: #2980b9;
+            color: white;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .developer-credit {
+            background-color: #1a252f;
+            color: white;
+            padding: 15px;
             text-align: center;
-            color: #333;
-            white-space: nowrap;
-            overflow: hidden;
-            display: inline-block;
-            max-width: 100%;
+            font-size: 0.9rem;
         }
-
-        /* Add typing animation */
-        .typing {
-            width: 0;
-            overflow: hidden;
-            border-right: 3px solid #000; /* Cursor effect */
-            animation: typing 2s steps(30) 1s forwards, blink-caret 0.75s step-end infinite;
+        
+        .developer-credit a {
+            color: var(--primary);
+            font-weight: 600;
         }
-
-        /* Typing animation */
-        @keyframes typing {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
+        
+        .badge-discount {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #e74c3c;
+            color: white;
+            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
         }
-
-        /* Blink the cursor */
-        @keyframes blink-caret {
-            50% {
-                border-color: transparent;
-            }
+        
+        .rating {
+            color: #f39c12;
+            margin-bottom: 10px;
         }
     </style>
 </head>
-
 <body>
-    <div class="bg2">
-        <nav class="navbar navbar-expand-lg navbar-dark bg1">
-            <div class="container">
-                <a class="navbar-brand">
-                    <img src="https://nife.io/static/media/logo.2a112da78536c5540591.png" class="logo">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div class="navbar-nav">
-                        <a class="nav-link active" href="#">platform <span class="sr-only">(current)</span></a>
-                        <a class="nav-link" href="#">solution</a>
-                        <a class="nav-link" href="#">resource</a>
-                        <a class="nav-link" href="#">marketplace</a>
-                        <a class="nav-link" href="#">blogs</a>
-                        <a class="nav-link" href="#">company</a>
-                        <span class="nav-link ml-5">|</span>
-                        <a class="btn btn-primary ml-3" href="#">Get Started</a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-laptop-code mr-2"></i>TechGadget
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <a class="btn btn-custom" href="#">
+                            <i class="fas fa-shopping-cart mr-2"></i>Cart
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 font-weight-bold mb-4">Welcome to TechGadget</h1>
+            <p class="lead mb-5">Your one-stop shop for the latest tech gadgets and accessories</p>
+            <a href="#products" class="btn btn-light btn-lg px-5 py-3 font-weight-bold">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 font-weight-bold">Featured Products</h2>
+            <div class="row">
+                <!-- Product 1 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card product-card h-100">
+                        <span class="badge-discount">20% OFF</span>
+                        <img src="https://m.media-amazon.com/images/I/71TPda7cwUL._AC_SL1500_.jpg" class="card-img-top product-img" alt="Wireless Earbuds">
+                        <div class="card-body">
+                            <h5 class="card-title">Premium Wireless Earbuds</h5>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="ml-2">(128)</span>
+                            </div>
+                            <p class="card-text">High-quality wireless earbuds with noise cancellation and 30hr battery life.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$89.99</span>
+                                <del class="text-muted">$112.99</del>
+                                <button class="btn btn-sm btn-custom">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="https://m.media-amazon.com/images/I/71zny7BTRlL._AC_SL1500_.jpg" class="card-img-top product-img" alt="Smart Watch">
+                        <div class="card-body">
+                            <h5 class="card-title">Smart Watch Pro</h5>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="ml-2">(95)</span>
+                            </div>
+                            <p class="card-text">Track your fitness, receive notifications, and more with this stylish smartwatch.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$149.99</span>
+                                <button class="btn btn-sm btn-custom">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card product-card h-100">
+                        <span class="badge-discount">15% OFF</span>
+                        <img src="https://m.media-amazon.com/images/I/61L1ItFgFHL._AC_SL1500_.jpg" class="card-img-top product-img" alt="Wireless Charger">
+                        <div class="card-body">
+                            <h5 class="card-title">Fast Wireless Charger</h5>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="ml-2">(210)</span>
+                            </div>
+                            <p class="card-text">Charge your devices quickly without the hassle of cables.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$34.99</span>
+                                <del class="text-muted">$41.99</del>
+                                <button class="btn btn-sm btn-custom">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="card product-card h-100">
+                        <img src="https://m.media-amazon.com/images/I/71WkDp--uqL._AC_SL1500_.jpg" class="card-img-top product-img" alt="Bluetooth Speaker">
+                        <div class="card-body">
+                            <h5 class="card-title">Portable Bluetooth Speaker</h5>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="ml-2">(176)</span>
+                            </div>
+                            <p class="card-text">Powerful sound in a compact, waterproof design perfect for outdoor adventures.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$59.99</span>
+                                <button class="btn btn-sm btn-custom">Add to Cart</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </nav>
+            
+            <div class="text-center mt-4">
+                <a href="#" class="btn btn-custom btn-lg">View All Products</a>
+            </div>
+        </div>
+    </section>
 
-        <div class="container mt-5">
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 font-weight-bold">Why Choose TechGadget?</h2>
             <div class="row">
-                <div class="col-xl-6">
-                    <h1>About Us</h1> 
-                    <p class="mt-5">Nife is a global edge application platform company that rapidly empowers enterprises and developers to launch their applications within the Nife Edge Grid.</p>
-                    <p>At Nife, we simplify the complexity of 5G, edge computing and cloud through a suite of APIs and tools that allow ease of launch and scale with security and privacy, keeping operating expenses at a fraction of the cost of legacy infrastructure.</p>
-                    <p>We work with systems integrators, distributors, and technology partners to realize the power of the edge economy and enable companies and communities to connect with a purpose.</p>
-                </div>
-
-                <div class="col-xl-4 ml-5">
-                    <h1 class="h1">Working remotely</h1>
-
-                    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active" data-interval="3000">
-                                <img src="https://media.istockphoto.com/id/700614054/photo/theyre-always-looking-for-new-ways-to-make-business-better.jpg?s=612x612&w=0&k=20&c=MYsBhcueHpei1MnJViquMYn_g-9ylf1AmPh1T4RtrQE=" class="d-block w-100 cimage" alt="...">
-                            </div>
-                            
-                            <div class="carousel-item" data-interval="3000">
-                                <img src="https://dam.mediacorp.sg/image/upload/s--KYaGO3sD--/c_fill,g_auto,h_468,w_830/f_auto,q_auto/cbd-09---file-photo-data.jpg?itok=Hck3xT5r" class="d-block w-100 cimage" alt="...">
-                            </div>
-                            
-                            <div class="carousel-item" data-interval="3000">
-                                <img src="https://storage.googleapis.com/acciojob-open-file-collections/4e58d1a5-9c40-4e59-a9fe-09719dd82542_Frame%204.png" class="d-block w-100 cimage" alt="...">
-                            </div>
-
-                            <div class="carousel-item" data-interval="3000">
-                                <img src="https://v2doverseas.com/wp-content/uploads/2024/11/statue-liberty-usa.jpg" class="d-block w-100 cimage" alt="...">
-                            </div>
-                        
+                <div class="col-md-4 mb-4">
+                    <div class="text-center p-4">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                            <i class="fas fa-shipping-fast fa-2x text-white"></i>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
+                        <h4>Free Shipping</h4>
+                        <p class="text-muted">Free delivery on all orders over $50. Fast shipping to your doorstep.</p>
                     </div>
-
-                    <!-- Label below the carousel -->
-                    <div id="carouselLabel" class="carousel-label mt-3">
-                        Dubai
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center p-4">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                            <i class="fas fa-undo fa-2x text-white"></i>
+                        </div>
+                        <h4>Easy Returns</h4>
+                        <p class="text-muted">30-day return policy. No questions asked for quality products.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="text-center p-4">
+                        <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 80px; height: 80px;">
+                            <i class="fas fa-headset fa-2x text-white"></i>
+                        </div>
+                        <h4>24/7 Support</h4>
+                        <p class="text-muted">Our customer service team is always ready to help you with any questions.</p>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 font-weight-bold">Contact Us</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h4>Get in Touch</h4>
+                    <p class="text-muted">Have questions about our products or need assistance with your order? Reach out to us!</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-3"><i class="fas fa-map-marker-alt mr-2 text-primary"></i> 123 Tech Street, Silicon Valley, CA 94025</li>
+                        <li class="mb-3"><i class="fas fa-phone mr-2 text-primary"></i> (555) 123-4567</li>
+                        <li class="mb-3"><i class="fas fa-envelope mr-2 text-primary"></i> info@techgadget.com</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-custom">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5>TechGadget</h5>
+                    <p>Your trusted source for the latest tech gadgets and accessories at competitive prices.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-light mr-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light mr-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light mr-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Shop</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">All Products</a></li>
+                        <li><a href="#" class="text-light">New Arrivals</a></li>
+                        <li><a href="#" class="text-light">Featured</a></li>
+                        <li><a href="#" class="text-light">Discounts</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Contact Us</a></li>
+                        <li><a href="#" class="text-light">FAQs</a></li>
+                        <li><a href="#" class="text-light">Shipping</a></li>
+                        <li><a href="#" class="text-light">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5>Newsletter</h5>
+                    <p>Subscribe to get updates on new products and special offers!</p>
+                    <form class="form-inline">
+                        <div class="input-group w-100">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="submit">Subscribe</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Developer Credit -->
+    <div class="developer-credit">
+        <div class="container">
+            <p class="mb-0">© 2023 TechGadget. All Rights Reserved. Developed by <a href="#">Sanjay</a></p>
+        </div>
     </div>
 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        const labels = [
-            "Dubai",
-            "Singapore",
-            "India",
-            "USA"
-        ];
-
-        const carousel = document.getElementById('carouselExampleInterval');
-        const labelElement = document.getElementById('carouselLabel');
-
-        function typeLabel(text, element) {
-            let i = 0;
-            element.innerHTML = ''; // Clear any previous label
-            const intervalId = setInterval(() => {
-                element.innerHTML += text.charAt(i);
-                i++;
-                if (i === text.length) {
-                    clearInterval(intervalId); // Stop the typing effect
+        // Smooth scrolling for anchor links
+        $(document).ready(function(){
+            $("a").on('click', function(event) {
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+                        window.location.hash = hash;
+                    });
                 }
-            }, 100); // Adjust typing speed by changing the interval time
-        }
-
-        $(carousel).on('slide.bs.carousel', function (e) {
-            const nextIndex = $(e.relatedTarget).index();
-            const labelText = labels[nextIndex];
-            typeLabel(labelText, labelElement);
+            });
         });
-
-        // Initial typing effect for the first label
-        typeLabel(labels[0], labelElement);
     </script>
 </body>
 </html>
